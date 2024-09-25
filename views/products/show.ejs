@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>show</title>
+</head>
+<!-- name:'tomato',
+        price: 2,
+        category : 'Fruit' -->
+<body>
+    <h6>details</h1>
+    <h1>name : <%=name  %></h1>
+    <p>price :$ <%=price  %></p>
+    <p>type : <%=category  %></p>
+
+    <!-- <p>belongs to <%= farm.name  %></p> -->
+    <!-- <a href="/farms/<%= farm._id  %>">  <p>belongs to <%= farm.name  %></p> </a> -->
+    <p> belongs to  <a href="/farms/<%= farm._id  %>"> <%= farm.name  %> </a></p>
+
+    <br>
+    <a href="/products">back to all</a>
+    <br>
+    <a href='/products/<%= _id %>/edit'>edit this</a>
+    <br>
+    <!-- <a href="/products/<%= _id %>">
+
+    </a> -->
+
+    <form action="/products/<%= _id %>?_method=DELETE" method="post">
+        <button>delete this prod</button>
+    </form>
+</body>
+</html>

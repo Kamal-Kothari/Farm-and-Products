@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>edit</title>
+</head>
+<body>
+<% const categories = ['fruit','vege','dairy']; %>
+    <p>editing  prod</p>
+    <form action="/products/<%= _id  %>?_method=PATCH" method="post">
+        <label for="name">Name : </label>
+        <input type="text" name="name" id="name" value="<%=name %>">
+        <br>
+        <label for="price">Price : $ </label>
+        <input type="number" name="price" id="price" step="0.01" value="<%=price %>">
+        <br>
+        <!-- <label for="category">Category : </label>
+        <input type="text" name="type" id="category">
+        <br> -->
+        <label for="type">Select category</label>
+        <select name="category" id="type">
+            <% for(let cate of categories){ %>
+                
+                 <option value="<%= cate  %>"  <%= category===cate ? 'selected':'' %>  >  <%= cate  %>  </option> 
+            <% } %>
+            
+            <!-- <option value="fruit"  >fruit</option>
+            <option value="vege">vege</option>
+            <option value="dairy">dairy</option> -->
+    </select>
+    <br>
+        <button>SUbmit</button>
+    </form>
+
+    <a href="/products">back to all</a>
+</body>
+</html>

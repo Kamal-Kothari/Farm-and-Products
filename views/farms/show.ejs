@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>show farm</title>
+</head>
+<!-- name:'tomato',
+        price: 2,
+        category : 'Fruit' -->
+<body>
+    <h6>details</h6>
+    <h1>name : <%=name  %></h1>
+    <p>city :$ <%=city  %></p>
+
+    <p>products of this farm</p>
+
+    <% for(let prod of products){ %>
+        <li> <a href="/products/<%= prod._id  %>"> <%= prod.name  %> </a> </li>
+    <% } %>
+    
+
+    <br>
+    <a href="/farms">back to all</a>
+    <br>
+
+    <a href="/farms/<%=_id  %>/products/new"> Create new prod for this farm</a>
+    <br>
+
+    
+
+    <form action="/farms/<%= _id  %>?_method=DELETE" method="post">
+        <button>del this farm</button>
+    </form>
+   
+    <!-- <a href='/farms/<%= _id %>/edit'>edit this</a>
+    <br>
+    <a href="/farms/<%= _id %>">
+
+    </a> 
+
+    <form action="/farms/<%= _id %>?_method=DELETE" method="post">
+        <button>delete this farm</button>
+    </form> 
+     -->
+</body>
+</html>
